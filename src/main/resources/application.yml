@@ -1,0 +1,12 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: proxy-project  
+  cloud:
+    gateway:
+      routes:
+        - id: r1
+          uri: http://localhost:8084 
+          predicates:
+            - Path=/api/v1/users/**
